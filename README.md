@@ -8,7 +8,7 @@
     <a href="https://discord.gg/socialclub"><img src="https://img.shields.io/discord/669603678579064842?color=7289da&label=servidor&logo=discord&logoColor=white" alt="Servidor" /></a>
     <a href="https://david-dm.org/Lucaas1/iris.svg"><img src="https://img.shields.io/Lucaas1/iris.svg.svg?maxAge=3600&label=dependencias" alt="Dependências" /></a>
   </p>
-  <i> Avatar feita por Nana七#2955 - 681192477390274604</i><br>
+  <i> Avatar feito por Nana七#2955 - 681192477390274604</i><br>
 </div>
 
 Aqui vocês encontram a source do bot para Discord, Iris<br>
