@@ -1,7 +1,8 @@
 const fs = require("fs")
 const bdir = process.cwd() + "/assets/banners.json"
+const Discord = require("discord.js")
 
-module.exports.set = async (client, channel = "716855994025508874") => { 
+module.exports.set = async (client, channel) => { 
     var social = client.guilds.cache.get("669603678579064842")
 
     var banners = JSON.parse(fs.readFileSync(bdir, "utf8"))
@@ -11,10 +12,16 @@ module.exports.set = async (client, channel = "716855994025508874") => {
     if(typeof banners !== "array") throw new Error("Banners must be a array")
     if(banners.length === 0) banners = [{url: "https://cdn.discordapp.com/banners/669603678579064842/c854a7c52f0609b3aa77f4f8145216cc.png?size=2048", user: "726859310444970174"}]
         
-    var banner = banners[Math.floor(Math.random() * banners.length)].url
-  
-    await social.setBanner(banner).catch(console.log)
-    return "sucess"
+    var banner = banners[Math.floor(Math.random() * banners.length)]
+    var embed = new Discord.MessageEmbed()
+    .setTitle("Mudei o banner do servidor.") 
+    .setDescription(`Esse banner foi feito pelo <@${user}>.`) 
+    .setColor("#0000ff") 
+    .setImage(banner.url) 
+    
+    await social.setBanner(banner.url).catch(console.log) 
+    if(channel) await client.channels.cache.get(channel).send(embed)
+    return banner
 }
 
 module.exports.add = async (url, userid) => {
