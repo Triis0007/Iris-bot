@@ -7,6 +7,8 @@ const client = new Discord.Client({
     
 });
 
+client.config = require('./utils/client_configs.json')
+
 const fs = require("fs")
 const config = require("./config.json");
 
@@ -38,3 +40,5 @@ fs.readdir("./events/", (err, files) => {
     client.on(eventName, event.bind(null, client));
   });
 });
+
+client.login(client.config.client_token)
