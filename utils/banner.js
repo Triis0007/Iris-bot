@@ -30,15 +30,6 @@ module.exports.add = async (url, userid) => {
     var banners = JSON.parse(fs.readFileSync(bdir, "utf8"))
      
     if(!banners || typeof banners !== "array") banners = []
-
-   /* var erro = null
-
-    banners.forEach(b => {
-        if(b.url.includes(url)) erro = "meh"
-    })
-    
-    if(erro) throw new Error("Este url já está salvo.")
-    */
     
     var has = await module.exports.has(url)
     if(has === true) throw new Error("Este url já está salvo.") 
@@ -64,6 +55,19 @@ module.exports.has = async (url) => {
 
     banners.forEach(b => {
         if(b.url.includes(url)) meh = "meh"
+    })
+    
+    if(meh === "meh") return true
+    else return false
+} 
+ 
+module.exports.hasID = async (id) => { 
+     var banners = JSON.parse(fs.readFileSync(bdir, "utf8"))
+
+    var meh = null
+
+    banners.forEach(b => {
+        if(b.user.includes(id)) meh = "meh"
     })
     
     if(meh === "meh") return true
