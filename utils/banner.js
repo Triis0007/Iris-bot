@@ -16,7 +16,7 @@ module.exports.set = async (client, channel) => {
     var embed = new Discord.MessageEmbed()
     .setTitle("Mudei o banner do servidor.") 
     .setDescription(`Esse banner foi feito pelo <@${user}>.`) 
-    .setColor("#0000ff") 
+    .setColor("RANDOM") 
     .setImage(banner.url) 
     
     await social.setBanner(banner.url).catch(console.log) 
