@@ -10,7 +10,6 @@ const client = new Discord.Client({
 client.config = require('./utils/client_configs.json')
 
 const fs = require("fs")
-const config = require("./config.json");
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection()
