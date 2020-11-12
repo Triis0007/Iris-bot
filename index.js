@@ -11,6 +11,8 @@ client.config = require('./utils/client_configs.json')
 
 const fs = require("fs")
 
+const config = require("./utils/client_configs.json");
+
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection()
 fs.readdir("./commands/", (err, files) => {
